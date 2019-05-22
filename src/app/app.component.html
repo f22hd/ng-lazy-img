@@ -1,10 +1,18 @@
 <div class="container">
   <div class="row justify-content-center">
       <div class="col-6">
-        <div class="card mt-5" *ngFor="let img of images; let i = index">
-            <img class="card-img-top" src="https://picsum.photos/id/{{i}}/400/400" alt="">
+        <div class="card" *ngFor="let imgPath of images; let i = index">
+            <img Lazyimg class="card-img-top"  default='/assets/default.png' [src]="imgPath" alt="">
+            <div class="card-img-overlay align-middle">
+              <div class="card-content">
+                  <h4 class="card-title">Card title</h4>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <p class="card-text">Last updated 3 mins ago</p>
+              </div>
+            </div>
         </div>
       </div>
   </div>    
 </div>
 
+ 

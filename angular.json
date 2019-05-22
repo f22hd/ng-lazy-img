@@ -130,6 +130,41 @@
           }
         }
       }
+    },
+    "lazyimg": {
+      "root": "projects/lazyimg",
+      "sourceRoot": "projects/lazyimg/src",
+      "projectType": "library",
+      "prefix": "enl",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/lazyimg/tsconfig.lib.json",
+            "project": "projects/lazyimg/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/lazyimg/src/test.ts",
+            "tsConfig": "projects/lazyimg/tsconfig.spec.json",
+            "karmaConfig": "projects/lazyimg/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/lazyimg/tsconfig.lib.json",
+              "projects/lazyimg/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "lazyloadingimg"

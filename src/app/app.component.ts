@@ -8,5 +8,11 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'lazyloadingimg';
 
-  images:number[] = [1,2,3,4,5,6,7,8,9,10];
+  counter:number[] = [10,20,30,40,50,60,70,80,90,100];
+  images:string[] = [];
+  constructor(){
+      this.counter.forEach(i => {
+        this.images.push(`https://picsum.photos/id/${i}/300`);
+      })
+  }
 }
