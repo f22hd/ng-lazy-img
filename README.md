@@ -1,29 +1,35 @@
-[Demo](https://lazyimg-ng.firebaseapp.com/)
+[Demo](https://ng-lazy-img.firebaseapp.com/){:target="_blank"}
 
-# Lazyloadingimg
+## Getting Started
+Add the directive to your app by run this command `npm i --save ng-lazy-img` in your terminal.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.6.
+Then import the directive into your module , such as app.module.ts
+```
 
-## Development server
+import { NgLazyImgModule } from 'ng-lazy-img';
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [ 
+    ...
+    NgLazyImgModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
 
-## Code scaffolding
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## How to use it?
 
-## Build
+Add the direcive in html image tag.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+``` <img NgLazyImg default='/assets/default.png' [src]="imgPath"> ```
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+You can use default image until target image loading.
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Now, should images loading lazily in browsing.
