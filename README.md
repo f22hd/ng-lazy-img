@@ -1,4 +1,4 @@
-[Demo](https://ng-lazy-img.firebaseapp.com/){:target="_blank"}
+[Demo](https://ng-lazy-img.firebaseapp.com/)
 
 ## Getting Started
 Add the directive to your app by run this command `npm i --save ng-lazy-img` in your terminal.
