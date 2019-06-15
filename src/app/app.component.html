@@ -1,8 +1,8 @@
 <div class="container">
   <div class="row justify-content-center">
-      <div class="col-6">
+      <div class="col-12 col-sm-6">
         <div class="card" *ngFor="let imgPath of images; let i = index">
-            <img Lazyimg class="card-img-top"  default='/assets/default.png' [src]="imgPath" alt="">
+            <img NgLazyImg class="card-img-top"  default='/assets/default.png' [src]="imgPath" alt="">
             <div class="card-img-overlay align-middle">
               <div class="card-content">
                   <h4 class="card-title">Card title</h4>

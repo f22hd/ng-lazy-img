@@ -19,8 +19,8 @@
       "dom"
     ],
     "paths": {
-      "lazyimg": [
-        "dist/lazyimg"
+      "ng-lazy-img": [
+        "dist/ng-lazy-img"
       ]
     }
   }

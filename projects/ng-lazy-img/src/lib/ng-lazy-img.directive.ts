@@ -1,16 +1,16 @@
 import { Directive, HostBinding, Input, ElementRef } from '@angular/core';
 
 @Directive({
-  selector: '[Lazyimg]'
+  selector: '[NgLazyImg]'
 })
-export class LazyimgDirective {
+export class NgLazyImgDirective {
 
+  
   @HostBinding('attr.src') srcAttr  = null;
   @Input() src : string;
   @Input() default : string;
 
-  constructor(private imgElement:ElementRef) {
-   }
+  constructor(private imgElement:ElementRef) {}
 
 
    ngAfterContentInit(){
@@ -44,4 +44,5 @@ export class LazyimgDirective {
     obs.observe(this.imgElement.nativeElement);
 
   }
+
 }

@@ -131,33 +131,33 @@
         }
       }
     },
-    "lazyimg": {
-      "root": "projects/lazyimg",
-      "sourceRoot": "projects/lazyimg/src",
+    "ng-lazy-img": {
+      "root": "projects/ng-lazy-img",
+      "sourceRoot": "projects/ng-lazy-img/src",
       "projectType": "library",
-      "prefix": "enl",
+      "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
           "options": {
-            "tsConfig": "projects/lazyimg/tsconfig.lib.json",
-            "project": "projects/lazyimg/ng-package.json"
+            "tsConfig": "projects/ng-lazy-img/tsconfig.lib.json",
+            "project": "projects/ng-lazy-img/ng-package.json"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/lazyimg/src/test.ts",
-            "tsConfig": "projects/lazyimg/tsconfig.spec.json",
-            "karmaConfig": "projects/lazyimg/karma.conf.js"
+            "main": "projects/ng-lazy-img/src/test.ts",
+            "tsConfig": "projects/ng-lazy-img/tsconfig.spec.json",
+            "karmaConfig": "projects/ng-lazy-img/karma.conf.js"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/lazyimg/tsconfig.lib.json",
-              "projects/lazyimg/tsconfig.spec.json"
+              "projects/ng-lazy-img/tsconfig.lib.json",
+              "projects/ng-lazy-img/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"

@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { LazyimgModule } from 'lazyimg';
+import { NgLazyImgModule } from 'ng-lazy-img';
 
 @NgModule({
   declarations: [
@@ -13,7 +13,7 @@ import { LazyimgModule } from 'lazyimg';
   imports: [ 
     BrowserModule,
     AppRoutingModule,
-    LazyimgModule
+    NgLazyImgModule
   ],
   providers: [],
   bootstrap: [AppComponent]
