@@ -13,7 +13,11 @@ import { NgLazyImgModule } from 'ng-lazy-img';
   imports: [ 
     BrowserModule,
     AppRoutingModule,
-    NgLazyImgModule
+    NgLazyImgModule.forRoot({
+      defaultImagePath:'/assets/default.png',
+      threshold: .4,
+      rootMargin:'0px'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -23,7 +23,6 @@ export class AppModule { }
 
 ```
 
-## How to use it?
 
 Add the direcive in html image tag.
 

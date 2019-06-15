@@ -1,4 +1,6 @@
-import { Directive, HostBinding, Input, ElementRef } from '@angular/core';
+import { Directive, HostBinding, Input, ElementRef, Inject } from '@angular/core';
+import {ngLazyImageConfigSerivce} from './ng-lazy-image-config.service';
+import { NgLazyImgConfig } from './ng-lazy-img.model';
 
 @Directive({
   selector: '[NgLazyImg]'
@@ -8,13 +10,12 @@ export class NgLazyImgDirective {
   
   @HostBinding('attr.src') srcAttr  = null;
   @Input() src : string;
-  @Input() default : string;
 
-  constructor(private imgElement:ElementRef) {}
+  constructor(private imgElement:ElementRef,@Inject(ngLazyImageConfigSerivce) private config:NgLazyImgConfig) {}
 
 
    ngAfterContentInit(){
-    this.srcAttr = this.default;
+    this.srcAttr = this.config.defaultImagePath ? this.config.defaultImagePath : '';
     this.canLazyLoad() ? this.lazyLoadingImage()  : this.loadImage();
   }
 
@@ -28,10 +29,9 @@ export class NgLazyImgDirective {
   }
 
   private lazyLoadingImage(){
-    const options = {
-      rootMargin: '0px',
-      threshold: .40
-    }
+    this.config.rootMargin = this.config.rootMargin ? this.config.rootMargin : '0px';
+    this.config.threshold = this.config.threshold ? this.config.threshold : .40;
+
     const obs = new IntersectionObserver((entries) => {
           entries.forEach( ({isIntersecting}) => {
               if(isIntersecting){          
@@ -39,7 +39,7 @@ export class NgLazyImgDirective {
                   obs.unobserve(this.imgElement.nativeElement);
               }
           });
-    },options);
+    },this.config);
 
     obs.observe(this.imgElement.nativeElement);
 
