@@ -14,7 +14,8 @@ import { NgLazyImgModule } from 'ng-lazy-img';
     BrowserModule,
     AppRoutingModule,
     NgLazyImgModule.forRoot({
-      defaultImagePath:'/assets/default.png',
+      defaultImagePath: '/assets/default.png',
+      errorImagePath: '/assets/error.png',
       threshold: .4,
       rootMargin:'0px'
     })

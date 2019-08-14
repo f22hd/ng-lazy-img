@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'lazyloadingimg';
 
-  counter:number[] = [10,20,30,40,50,60,70,80,90,100];
+  counter:number[] = [10,20,-1,30,40,-2,50,60,70,80,90,100];
   images:string[] = [];
   constructor(){
       this.counter.forEach(i => {

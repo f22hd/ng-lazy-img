@@ -1,4 +1,4 @@
-import { Directive, HostBinding, Input, ElementRef, Inject } from '@angular/core';
+import { Directive, HostBinding, Input, ElementRef, Inject, HostListener } from '@angular/core';
 import {ngLazyImageConfigSerivce} from './ng-lazy-image-config.service';
 import { NgLazyImgConfig } from './ng-lazy-img.model';
 
@@ -17,6 +17,11 @@ export class NgLazyImgDirective {
    ngAfterContentInit(){
     this.srcAttr = this.config.defaultImagePath ? this.config.defaultImagePath : '';
     this.canLazyLoad() ? this.lazyLoadingImage()  : this.loadImage();
+  }
+
+  @HostListener('error')
+  onError(){    
+    this.srcAttr = (this.config.errorImagePath) ? this.config.errorImagePath : this.config.defaultImagePath;
   }
 
 
